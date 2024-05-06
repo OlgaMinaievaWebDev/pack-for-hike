@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Start from "./Start";
 import PackingList from "./PackingList";
+import Form from "./Form";
 
 function App() {
   const [startPacking, setStartPacking] = useState(false);
@@ -8,7 +9,10 @@ function App() {
   return (
     <div className="App">
       {startPacking ? (
-        <PackingList />
+        <>
+          <Form />
+          <PackingList />
+        </>
       ) : (
         <Start setStartPacking={setStartPacking} />
       )}
