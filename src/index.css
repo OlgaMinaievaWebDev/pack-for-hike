@@ -1,13 +1,29 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+  height: 80vh;
+  margin: 0 auto;
+  background-image: url("../public/images/landscape.jpeg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn-start {
+  font-size: 1.5rem;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  outline: none;
+  border: none;
+  letter-spacing: 0.05em;
+  color: #0a6847;
+  background-color: #f3ca52;
 }
