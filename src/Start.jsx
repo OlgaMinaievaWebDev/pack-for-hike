@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Start({ setStartPacking }) {
-  const [weight, setWeight] = useState(20);
+  const [backpackCapacity, setBackpackCapacity] = useState(10);
 
   function handleStartApp() {
     setStartPacking(true);
@@ -12,17 +12,15 @@ export default function Start({ setStartPacking }) {
       <p>Choose your backpack capacity</p>
       <select
         className="choose-weight"
-        value={weight}
-        onChange={(e) => setWeight(e.target.value)}
+        value={backpackCapacity}
+        onChange={(e) => setBackpackCapacity(e.target.value)}
       >
-        {Array.from({ length: 55 }, (_, index) => index + 20).map(
+        {Array.from({ length: 55 }, (_, index) => index + 10).map(
           (num, index) =>
             index % 5 === 0 && <option key={num}>{num} lbs</option>
         )}
       </select>
-      <button className="btn-start" onClick={handleStartApp}>
-        Start Packing
-      </button>
+      <button onClick={handleStartApp}>Start Packing</button>
     </div>
   );
 }

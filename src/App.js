@@ -1,13 +1,17 @@
 import { useState } from "react";
 import Start from "./Start";
-import Packing from "./Packing";
+import PackingList from "./PackingList";
 
 function App() {
   const [startPacking, setStartPacking] = useState(false);
 
   return (
     <div className="App">
-      {startPacking ? <Packing /> : <Start setStartPacking={setStartPacking} />}
+      {startPacking ? (
+        <PackingList />
+      ) : (
+        <Start setStartPacking={setStartPacking} />
+      )}
     </div>
   );
 }

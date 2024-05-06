@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,31 +18,47 @@
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
+
+  font-family: "Sedan SC", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   margin-bottom: 20px;
 }
 
 p {
-  font-size: 1.2rem;
-}
-
-.btn-start,
-.choose-weight {
-  font-size: 1.5rem;
-  padding: 0.4em 0.8em;
-  border-radius: 0.3em;
-  outline: none;
-  border: none;
-  letter-spacing: 0.05em;
-  color: #0a6847;
-  background-color: #f3ca52;
-  margin-top: 1em;
-  cursor: pointer;
+  margin-bottom: 1em;
 }
 
 .choose-weight {
   margin-right: 0.5em;
+}
+form h2 {
+  margin-bottom: 1em;
+}
+
+input[type="text"],
+input[type="number"],
+button,
+.btn-start,
+.choose-weight {
+  margin-bottom: 10px;
+  padding: 0.5em;
+  font-family: inherit;
+  font-size: 0.9em;
+  margin-left: 0.5em;
+  outline: #0a6847;
+  color: #141e46;
+  background-color: #fff5e0;
+  border: none;
+  border-radius: 0.3em;
+  cursor: pointer;
+  min-width: 11em;
+}
+
+button {
+  background-color: #f3ca52;
 }
