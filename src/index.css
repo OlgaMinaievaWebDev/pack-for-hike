@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #141e46;
 }
 
 .App {
@@ -18,9 +19,19 @@
   background-size: cover;
 }
 
-.btn-start {
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.btn-start,
+.choose-weight {
   font-size: 1.5rem;
-  padding: 0.5em 1em;
+  padding: 0.4em 0.8em;
   border-radius: 0.3em;
   outline: none;
   border: none;
@@ -28,4 +39,9 @@
   color: #0a6847;
   background-color: #f3ca52;
   margin-top: 1em;
+  cursor: pointer;
+}
+
+.choose-weight {
+  margin-right: 0.5em;
 }

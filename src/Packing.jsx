@@ -1,3 +1,3 @@
 export default function Packing() {
-  return <>Start packing</>;
+  return <>Enter packing form</>;
 }
