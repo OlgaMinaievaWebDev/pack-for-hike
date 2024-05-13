@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Start({ setStartPacking }) {
-  const [backpackCapacity, setBackpackCapacity] = useState(10);
+  const [backpackCapacity, setBackpackCapacity] = useState(() => {
+    const storedCapacity = localStorage.getItem("backpackCapacity");
+    return storedCapacity ? parseInt(storedCapacity) : 10;
+  });
 
   function handleStartApp() {
     setStartPacking(true);
   }
+
+  useEffect(() => {
+    localStorage.setItem("backpackCapacity", JSON.stringify(backpackCapacity));
+  }, [backpackCapacity]);
+
   return (
     <div className="start-page">
       <h1>Lets pack for a hike</h1>
@@ -16,8 +24,7 @@ export default function Start({ setStartPacking }) {
         onChange={(e) => setBackpackCapacity(e.target.value)}
       >
         {Array.from({ length: 55 }, (_, index) => index + 10).map(
-          (num, index) =>
-            index % 5 === 0 && <option key={num}>{num} lbs</option>
+          (num, index) => index % 5 === 0 && <option key={num}>{num}</option>
         )}
       </select>
       <button onClick={handleStartApp}>Start Packing</button>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Form({ onAddItems }) {
   const [itemName, setItemName] = useState("");
