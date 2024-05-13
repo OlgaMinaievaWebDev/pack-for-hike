@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Start({
   setStartPacking,
@@ -23,7 +23,12 @@ export default function Start({
         onChange={(e) => setBackpackCapacity(e.target.value)}
       >
         {Array.from({ length: 55 }, (_, index) => index + 10).map(
-          (num, index) => index % 5 === 0 && <option key={num}>{num}</option>
+          (num, index) =>
+            index % 5 === 0 && (
+              <option key={num} value={num}>
+                {num}
+              </option>
+            )
         )}
       </select>
       <button onClick={handleStartApp}>Start Packing</button>

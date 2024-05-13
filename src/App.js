@@ -6,13 +6,14 @@ import Form from "./Form";
 function App() {
   const [backpackCapacity, setBackpackCapacity] = useState(() => {
     const storedCapacity = localStorage.getItem("backpackCapacity");
-    return storedCapacity ? parseInt(storedCapacity) : 10;
+    const parsedCapacity = storedCapacity ? parseInt(storedCapacity) : 0;
+    return isNaN(parsedCapacity) ? 0 : parsedCapacity;
   });
-  const [startPacking, setStartPacking] = useState(false);
   const [items, setItems] = useState(() => {
     const storedItems = localStorage.getItem("items");
     return storedItems ? JSON.parse(storedItems) : [];
   });
+  const [startPacking, setStartPacking] = useState(false);
 
   function handleAddItems(item) {
     setItems((items) => [...items, item]);
@@ -32,6 +33,7 @@ function App() {
           <Form
             onAddItems={handleAddItems}
             backpackCapacity={backpackCapacity}
+            setStartPacking={setStartPacking}
           />
           <PackingList items={items} onDeleteItems={handleDeleteItems} />
         </>
