@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 
-export default function Start({ setStartPacking }) {
-  const [backpackCapacity, setBackpackCapacity] = useState(() => {
-    const storedCapacity = localStorage.getItem("backpackCapacity");
-    return storedCapacity ? parseInt(storedCapacity) : 10;
-  });
-
+export default function Start({
+  setStartPacking,
+  backpackCapacity,
+  setBackpackCapacity,
+}) {
   function handleStartApp() {
     setStartPacking(true);
   }

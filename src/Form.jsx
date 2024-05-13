@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Form({ onAddItems }) {
+function Form({ onAddItems, backpackCapacity }) {
   const [itemName, setItemName] = useState("");
   const [itemWeight, setItemWeight] = useState("");
 
@@ -24,7 +24,7 @@ function Form({ onAddItems }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Packing Items</h2>
+      <h2>Add Items to Your {backpackCapacity}lbs Backpack</h2>
       <input
         type="text"
         placeholder="Item Name"
