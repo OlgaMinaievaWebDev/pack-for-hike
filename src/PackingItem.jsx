@@ -1,9 +1,9 @@
-export default function PackingItem() {
+export default function PackingItem({ item }) {
   return (
     <li>
       <input type="checkbox" />
-      <span>name</span>
-      <span>weight</span>
+      <span>{item.name}</span>
+      <span> {item.weight}lbs</span>
       <button>❌</button>
     </li>
   );

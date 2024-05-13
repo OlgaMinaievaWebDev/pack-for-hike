@@ -8,6 +8,7 @@
 
 .App {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -18,7 +19,6 @@
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
-
   font-family: "Sedan SC", serif;
   font-weight: 400;
   font-style: normal;
@@ -36,6 +36,7 @@ p {
 .choose-weight {
   margin-right: 0.5em;
 }
+
 form h2 {
   margin-bottom: 1em;
 }
@@ -61,4 +62,38 @@ button,
 
 button {
   background-color: #f3ca52;
+}
+
+.items-list {
+  margin-top: 1rem;
+}
+
+.items-list ul {
+  list-style: none;
+  outline: none;
+  display: grid;
+  width: 450px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  justify-content: center;
+  align-content: start;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 6px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 12rem;
+  background-color: #fff5e0;
+  font-size: 0.9rem;
+}
+
+li button {
+  margin-left: auto;
+  min-width: 20px;
+  margin-bottom: 0;
 }

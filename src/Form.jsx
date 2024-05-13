@@ -11,8 +11,8 @@ function Form({ onAddItems }) {
     if (!itemWeight) return;
 
     const newItem = {
-      itemName,
-      itemWeight,
+      name: itemName,
+      weight: itemWeight,
       packed: false,
       id: Date.now(),
     };

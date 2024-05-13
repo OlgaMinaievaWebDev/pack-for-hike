@@ -1,11 +1,12 @@
 import PackingItem from "./PackingItem";
 
-export default function PackingList() {
+export default function PackingList({ items }) {
   return (
-    <div>
+    <div className="items-list">
       <ul>
-        {}
-        <PackingItem />
+        {items.map((item) => (
+          <PackingItem item={item} key={item.id} />
+        ))}
       </ul>
     </div>
   );
