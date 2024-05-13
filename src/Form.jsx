@@ -1,11 +1,14 @@
 import { useState } from "react";
 
-function Form({ onAddItem }) {
+function Form({ onAddItems }) {
   const [itemName, setItemName] = useState("");
   const [itemWeight, setItemWeight] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    if (!itemName) return;
+    if (!itemWeight) return;
 
     const newItem = {
       itemName,
@@ -14,6 +17,9 @@ function Form({ onAddItem }) {
       id: Date.now(),
     };
     console.log(newItem);
+    onAddItems(newItem);
+    setItemName("");
+    setItemWeight("");
   }
 
   return (
