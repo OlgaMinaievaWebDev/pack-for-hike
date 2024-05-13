@@ -7,11 +7,14 @@ function App() {
   const [startPacking, setStartPacking] = useState(false);
   const [items, setItems] = useState([]);
 
+  function handleAddItem(item) {
+    setItems((items) => [...items, item]);
+  }
   return (
     <div className="App">
       {startPacking ? (
         <>
-          <Form />
+          <Form onAddItems={handleAddItem} />
           <PackingList items={items} />
         </>
       ) : (
