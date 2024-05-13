@@ -5,13 +5,14 @@ import Form from "./Form";
 
 function App() {
   const [startPacking, setStartPacking] = useState(false);
+  const [items, setItems] = useState([]);
 
   return (
     <div className="App">
       {startPacking ? (
         <>
           <Form />
-          <PackingList />
+          <PackingList items={items} />
         </>
       ) : (
         <Start setStartPacking={setStartPacking} />

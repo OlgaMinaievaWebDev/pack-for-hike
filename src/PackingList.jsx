@@ -4,6 +4,7 @@ export default function PackingList() {
   return (
     <div>
       <ul>
+        {}
         <PackingItem />
       </ul>
     </div>

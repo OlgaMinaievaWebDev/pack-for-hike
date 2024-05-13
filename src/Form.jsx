@@ -3,8 +3,13 @@ import { useState } from "react";
 function Form() {
   const [itemName, setItemName] = useState("");
   const [itemWeight, setItemWeight] = useState(0);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h2>Packing Items</h2>
       <input type="text" placeholder="Item Name"></input>
       <input
