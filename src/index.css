@@ -12,8 +12,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 1rem;
   width: 60vw;
-  height: 80vh;
+  min-width: 450px;
+  min-height: 60vh;
+  height: fit-content;
   margin: 0 auto;
   background-image: url("../public/images/landscape.jpeg");
   background-position: right;
@@ -74,9 +77,9 @@ button {
   list-style: none;
   outline: none;
   display: grid;
-  width: 450px;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
+  width: 400px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
   justify-content: center;
   align-content: start;
 }

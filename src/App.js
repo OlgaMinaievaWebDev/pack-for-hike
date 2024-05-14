@@ -19,6 +19,21 @@ function App() {
     setItems((items) => items.filter((item) => item.id !== id));
   }
 
+  function handleToggleItem(id) {
+    setItems((items) =>
+      items.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
+  }
+
+  function handleClearList() {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete all items?"
+    );
+    if (confirmed) setItems([]);
+  }
+
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
@@ -28,7 +43,12 @@ function App() {
       {startPacking ? (
         <>
           <Form onAddItems={handleAddItems} />
-          <PackingList items={items} onDeleteItems={handleDeleteItems} />
+          <PackingList
+            items={items}
+            onDeleteItems={handleDeleteItems}
+            onToggleItem={handleToggleItem}
+            onClearList={handleClearList}
+          />
         </>
       ) : (
         <Start setStartPacking={setStartPacking} />
