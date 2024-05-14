@@ -4,20 +4,17 @@ import PackingList from "./PackingList";
 import Form from "./Form";
 
 function App() {
-  const [backpackCapacity, setBackpackCapacity] = useState(() => {
-    const storedCapacity = localStorage.getItem("backpackCapacity");
-    const parsedCapacity = storedCapacity ? parseInt(storedCapacity) : 0;
-    return isNaN(parsedCapacity) ? 0 : parsedCapacity;
-  });
+  const [startPacking, setStartPacking] = useState(false);
+
   const [items, setItems] = useState(() => {
     const storedItems = localStorage.getItem("items");
     return storedItems ? JSON.parse(storedItems) : [];
   });
-  const [startPacking, setStartPacking] = useState(false);
 
   function handleAddItems(item) {
     setItems((items) => [...items, item]);
   }
+
   function handleDeleteItems(id) {
     setItems((items) => items.filter((item) => item.id !== id));
   }
@@ -30,19 +27,11 @@ function App() {
     <div className="App">
       {startPacking ? (
         <>
-          <Form
-            onAddItems={handleAddItems}
-            backpackCapacity={backpackCapacity}
-            setStartPacking={setStartPacking}
-          />
+          <Form onAddItems={handleAddItems} />
           <PackingList items={items} onDeleteItems={handleDeleteItems} />
         </>
       ) : (
-        <Start
-          setStartPacking={setStartPacking}
-          backpackCapacity={backpackCapacity}
-          setBackpackCapacity={setBackpackCapacity}
-        />
+        <Start setStartPacking={setStartPacking} />
       )}
     </div>
   );
