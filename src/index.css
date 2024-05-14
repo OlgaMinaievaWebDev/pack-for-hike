@@ -49,6 +49,7 @@ form h2 {
 input[type="text"],
 input[type="number"],
 button,
+select,
 .btn-start,
 .choose-weight {
   margin-bottom: 10px;
