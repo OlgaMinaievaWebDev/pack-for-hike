@@ -13,9 +13,10 @@
   justify-content: center;
   text-align: center;
   padding: 1rem;
-  width: 60vw;
-  min-width: 450px;
-  min-height: 80vh;
+  width: 90vw;
+  max-width: 600px;
+  height: 90vh;
+  max-height: 1000px;
   height: fit-content;
   margin: 0 auto;
   background-image: url("../public/images/landscape.jpeg");
@@ -112,9 +113,7 @@ li button {
   /* Adjustments for smaller screens */
 
   .App {
-    width: 90vw;
-    min-width: auto;
-    min-height: auto;
+    max-width: 450px;
     margin: 0 auto;
   }
 
